@@ -442,7 +442,11 @@ namespace UnityEngine.UI.Extensions
 
 			if (_isPanelActive)
 				transform.SetAsLastSibling();
+
+			OnPanelToggle.Invoke(_isPanelActive);
 		}
+
+		public Events.UnityEvent<bool> OnPanelToggle;
 
 		/// <summary>
 		/// Hides the drop down panel if its visible at the moment
